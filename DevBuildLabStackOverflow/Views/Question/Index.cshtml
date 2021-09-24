@@ -1,0 +1,36 @@
+﻿@model List<Question>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Questions:</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Username</th>
+            <th>Title</th>
+            <th>Detail</th>
+            <th>Posted</th>
+            <th>Category</th>
+            <th>Tags</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(Question ques in Model)
+            {
+        <tr>
+            <td>@ques.id</td>
+            <td>@ques.username</td>
+            <td>@ques.title</td>
+            <td>@ques.detail</td>
+            <td>@ques.posted</td>
+            <td>@ques.category</td>
+            <td>@ques.tags</td>
+        </tr>
+            }
+    </tbody>
+
+</table>
+<a asp-action="AddQuestion" class="btn btn-primary">Submit Question</a>

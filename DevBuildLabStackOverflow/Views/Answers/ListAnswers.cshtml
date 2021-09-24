@@ -1,0 +1,11 @@
+﻿@model QuestionAnswers
+@{
+    ViewData["Title"] = "ListAnswers";
+}
+
+<h1>Answers @Model.ques.title</h1>
+
+@foreach(Answer ans in Model.ans)
+            {
+                <div>@ans.username @ans.detail @ans.questionId @ans.posted</div>
+            }
